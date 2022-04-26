@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>© xiedaimala.com 2018 wechat: xiedaimala01</p>
+    <p>© stguoro@126.com 2022 </p>
   </footer>
 </template>
 

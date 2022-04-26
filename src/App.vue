@@ -2,10 +2,10 @@
   <div id="app">
     <Header id="header"></Header>
     <main id="main">
-      <router-view/>   
+      <router-view/>
     </main>
     <Footer id="footer"></Footer>
-     
+
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
 
 #app {
   display: grid;
-  grid-template-columns: 12% auto 12%;
+  grid-template-columns: 20% auto 20%;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "header header header"
                        ".      main  ."

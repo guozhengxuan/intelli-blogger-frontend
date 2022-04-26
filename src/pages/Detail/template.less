@@ -22,7 +22,7 @@
     h3 {
       grid-column: 2;
       grid-row: 1;
-      
+
       margin: 5px 0;
 
     }
@@ -44,6 +44,81 @@
 
   .article {
     padding: 30px 0;
+  }
+
+  .cmt-header {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header select";
+    margin: 20px 0;
+
+    .header {
+      grid-area: header;
+      justify-self: center;
+      margin-left: 0;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .selection {
+      grid-area: select;
+      justify-self: right;
+      font-size: 15px;
+    }
+
+  }
+
+  .comment {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 25px 25px auto;
+    grid-template-areas:
+      "avt cap"
+      "avt created_at"
+      "emotion txt";
+    margin: 20px 0;
+
+    //.avatar {
+    //  //grid-column: 1;
+    //  //grid-row: 1 / span 2;
+    //
+    //
+    //
+    //
+    //}
+
+    img {
+      grid-area: avt;
+      justify-self: center;
+      margin-left: 0;
+      text-align: center;
+
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .caption {
+      grid-area: cap;
+      font-size: 10px;
+      color: @textLighterColor;
+    }
+
+    .create-date {
+      grid-area: created_at;
+      font-size: 10px;
+    }
+
+    .emotion {
+      grid-area: emotion;
+    }
+
+    .comment-text {
+      grid-area: txt;
+      margin-top: 0;
+    }
   }
 
 }
