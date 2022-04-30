@@ -6,9 +6,15 @@
       <p><router-link :to="`/user/${user.id}`">{{user.username}}</router-link> 发布于{{friendlyDate(createdAt)}}</p>
     </section>
     <section class="article" v-html="markdown"></section>
+    <section class="article-label" v-for="(innerLabels, outerLabel) in labelMap">
+      <el-tag effect="plain">#{{outerLabel}}</el-tag>
+      <template v-for="innerLabel in innerLabels">
+        <el-tag class="ml-2" type="success" effect="light">#{{innerLabel}}</el-tag>
+      </template>
+    </section>
     <section class="create-comment">
-      <el-input type="textarea" v-model="cmtTobeCreated"  :autosize="{ minRows: 2, maxRows: 6}"></el-input>
-      <el-button @click="onCreate">发表评论</el-button>
+      <el-input type="textarea" v-model="cmtTobeCreated"  :autosize="{ minRows: 4, maxRows: 6}"></el-input>
+      <el-button @click="onCreate" class="cmt-btn">发表评论</el-button>
     </section>
     <section class="comments">
       <section class="cmt-header">

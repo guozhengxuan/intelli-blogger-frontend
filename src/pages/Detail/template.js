@@ -11,6 +11,9 @@ export default {
       user: {},
       createdAt: '',
       blogId: '',
+      labels: '',
+      labelMap: {},
+
 
       // comments
       cmtTobeCreated: '',
@@ -27,6 +30,16 @@ export default {
       this.rawContent = res.data.content
       this.createdAt = res.data.createdAt
       this.user = res.data.user
+      this.labels = res.data.labels
+
+      this.labels.forEach(label => {
+        const detail = label.split("-")
+
+        if (this.labelMap[detail[0]] !== undefined)
+          this.labelMap[detail[0]].push(detail[1])
+        else
+          this.labelMap[detail[0]] = [detail[1]]
+      })
     })
 
     cmt.getComments({blogId: this.blogId}).then(result => {
